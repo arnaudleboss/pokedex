@@ -1,26 +1,59 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import poke from './test.png'; 
+import logo from './Pokédex_Pt.png';
 import './App.css';
+import {PokemonT} from "./PokemonT"
+import { render } from '@testing-library/react';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      
+      <div className="App-header">
+        <img src={poke} className="App-poke" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+         <b>Pokedex </b> 
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <img src={poke} className="App-poke2" alt="logo" />
+      </div>
+     <div className="App-Body">
+     <img src={logo} className="App-logo" alt="logo" />
+        <section className="poke-list">
+          
+        </section>  
+     </div>     
     </div>
   );
 }
 
+
+class Pokelist extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      cells: PokemonT.map(PokemonT => {
+        return (  
+          <div className="card bg-light" 
+          key ={PokemonT.id} 
+          img ={PokemonT.img}
+          name={PokemonT.name}
+          id={PokemonT.id} 
+          style={{marginLeft: '3em', width:'200px', height:'200px'}}></div>
+        );
+      }),
+      items : Array.from({ length: 2 }) 
+      } 
+    }
+    render(){
+    return(
+      <section className="poke-list">
+        {this.state.cells}
+      </section>
+    )
+  }
+  }
+
 export default App;
+

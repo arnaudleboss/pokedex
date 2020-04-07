@@ -1,33 +1,51 @@
 .App {
-  text-align: center;
+  justify-content: center;
+  width: 78em;
+  height: 300px;
+  padding-left: 10px;
+  margin: 0px auto;
+  background-color: #B22222;
+  border-radius: 50px;   
+  box-shadow: inset 0 0 20px rgba(17, 17, 17, 0.5);    
+}
+
+.App-Body{
+  background-color: rgb(83, 83, 83);
+  border-radius: 50px; 
+  margin: auto;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 25vmin;
   pointer-events: none;
+  margin: 20px 30px;
 }
-
+.App-poke{
+  height: 25vmin;
+  pointer-events: none;
+  transform: rotateY(180deg);
+  margin: 50px auto;
+}
+.App-poke2{
+  height: 25vmin;
+  pointer-events: none;
+  margin: 50px auto;
+}
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.App-poke,.App-poke2{
+    animation: App-logo-spin infinite 1s linear;
   }
 }
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
 .App-link {
   color: #61dafb;
 }
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +54,24 @@
     transform: rotate(360deg);
   }
 }
+
+b{
+  font-size: 150px;
+  color: #FFEF00;
+  margin: 10px auto;
+  text-shadow: rgb(0, 26, 255) 1px 0 15px;
+}
+
+.poke-list{
+  align-items: center;
+  width: 50em;
+  height: 30em;
+  padding: 10px;
+  margin: -100px 250px auto;
+  background-color: rgb(253, 253, 253);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  overflow-y: scroll;
+  }
+ 
+
+ 
