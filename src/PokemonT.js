@@ -1,4 +1,4 @@
-export const PokemonT = [
+const PokemonT = [
 {
       "id": 1,
       "num": "001",
@@ -4083,4 +4083,6 @@ export const PokemonT = [
         "Dark"
       ]
     }];
+
+    export default PokemonT;
   
