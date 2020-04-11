@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import PokeCard from "./PokeCard";
 import  PokemonT from "./PokemonT";
+import {BrowserRouter as Router ,Link ,Route,Switch} from 'react-router-dom'
 
 
 class Pokelist extends Component {
@@ -9,51 +10,37 @@ class Pokelist extends Component {
       super(props);
       this.state = {
             listPokemon: PokemonT,
-            isPokemonPageShow : false
+            isPokemonPageShow : false,
+            pokemonSelect : {}
         } 
-        this.handlePokemonSelect = this.handlePokemonSelect.bind(this);
       }
       
-    handlePokemonSelect(){
-        this.setState({
-            isPokemonPageShow : !this.state.isPokemonPageShow
-        })
+    handlePokemonSelect(pokemonSelectData){
+        this.props.handlePokemonSelect(pokemonSelectData)
     }
       render(){
       return(
-       < DisplayPage handlePokemonSelect={this.handlePokemonSelect} isPokemonPageShow={this.state.isPokemonPageShow} />
-      )
-    }
-    }
-    function DisplayPage(props){
-        if(props.isPokemonPageShow){
-            return(
-            <div className="card bg-light" 
-                
-            style={{marginLeft: '25em', marginTop: '-10em', width:'500px', height:'400px'}}>
-              je sais pas trop la 
-              <a href="pokedex" class="btn btn-danger">Retour</a>
-            </div>
-           
-           ); 
-            
-        }
-        else {
-            return (
-
-                <section              
+        <section              
         className="poke-list">
             <div className="row">
 
-
+        
             {PokemonT.map(pokemon => (
-               <PokeCard handlePokemonSelect={props.handlePokemonSelect.bind(this)} pokemonItem={pokemon} key = {pokemon.id}/>
+                
+                    
+                    
+                        <PokeCard handlePokemonSelect={this.handlePokemonSelect.bind(this)} pokemonItem={pokemon} key = {pokemon.id}/>
+                   
+                    
             ))} 
+           
+           
+
         </div></section>
       
-            )
-           
-        } 
+      )
     }
+    }
+ 
    
     export default Pokelist;

@@ -4,11 +4,12 @@ import logo from './Pokédex_Pt.png';
 import './App.css';
 import {PokemonT} from "./PokemonT"
 import { render } from '@testing-library/react';
+import {BrowserRouter as Router ,Link ,Route,Switch} from 'react-router-dom'
 
 import PokeList from "./Pokelist";
+import Content from './Content';
 
 function App() {
-
   return (
     <div className="App">
       
@@ -21,8 +22,9 @@ function App() {
       </div>
      <div className="App-Body">
      <img src={logo} className="App-logo" alt="logo" />
-        <PokeList />
-     </div>     
+      
+        <Content />
+        </div>    
     </div>
   );
 }
